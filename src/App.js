@@ -47,10 +47,10 @@ class Ticker extends Component {
 
   render() { 
     return(
-      <div>
+      <div className = "content">
         <p>The ticker number is: {this.state.count}</p>
-        <button type= "button" onClick={this.clear}>Reset</button>
-        <button type= "button" onClick={this.toggleButton}>{this.state.button}</button>
+        <button className="button" type= "button" onClick={this.clear}>Reset</button>
+        <button className="button" type= "button" onClick={this.toggleButton}>{this.state.button}</button>
       </div>
     )
   }
