@@ -5,7 +5,8 @@ class Ticker extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0
+      count: 0,
+      button: "Pause"
     }
   }
 
@@ -28,11 +29,28 @@ class Ticker extends Component {
     })
   }
 
+  toggleButton = () => {
+    if(this.state.button === "Pause") {
+      this.setState ({
+        // count: clearInterval(),
+        button: "ticker is paused",
+      })
+    } else if (this.state.button === "ticker is paused") {
+      this.setState ({
+        button: "Pause",
+      })
+    } else {
+      return;
+    }
+
+  }
+
   render() { 
     return(
       <div>
         <p>The ticker number is: {this.state.count}</p>
         <button type= "button" onClick={this.clear}>Reset</button>
+        <button type= "button" onClick={this.toggleButton}>{this.state.button}</button>
       </div>
     )
   }
