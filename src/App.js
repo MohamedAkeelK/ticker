@@ -22,10 +22,17 @@ class Ticker extends Component {
     else return false;
   }
 
+  clear = () => {
+    this.setState ({
+      count: this.state.count = 0
+    })
+  }
+
   render() { 
     return(
       <div>
         <p>The ticker number is: {this.state.count}</p>
+        <button type= "button" onClick={this.clear}>Reset</button>
       </div>
     )
   }
